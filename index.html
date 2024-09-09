@@ -46,17 +46,25 @@ color: violet;
       var day = 'day'
       var selectorBody = document.querySelector('body')
 
-      function linkColorChange(night_day) {
-        console.log(night_day);
+      function linkColorChange(self) {
+        
         var tagA = document.querySelectorAll('a');
         var index = 0;
 
-        if (night_day == night) {
+        if (self.value == night) {
+          selectorBody.style.backgroundColor='black';
+          selectorBody.style.color='white';
+          self.value = day
+
           while(index<tagA.length) {
             tagA[index].style.color = 'powderblue';
             index = index + 1;
           }
         } else {
+          selectorBody.style.backgroundColor='white';
+          selectorBody.style.color='black';
+          self.value = night
+
           for (index = 0; index < tagA.length ; index++) {
             tagA[index].style.color = 'blue'
           }
@@ -69,52 +77,8 @@ color: violet;
       type="button"
       value="night"
       onclick="
-    selectorBody.style.backgroundColor='black';
-    selectorBody.style.color='white';
+    linkColorChange(this)
     document.querySelector('table', 'th', 'td').style.border='1px solid white';
-    "
-    />
-    <input
-      type="button"
-      value="day"
-      onclick="
-    selectorBody.style.backgroundColor='white';
-    selectorBody.style.color='black';
-    "
-    />
-    <input
-    id="night_day"
-    type="button"
-    value= night
-    onclick="
-    if (document.querySelector('#night_day').value == 'night') {
-      selectorBody.style.backgroundColor='black';
-      selectorBody.style.color='white';
-      this.value = day
-
-      linkColorChange(night)
-    } else {
-      selectorBody.style.backgroundColor='white';
-      selectorBody.style.color='black';
-      this.value = night
-
-      linkColorChange(day)
-    }
-    "
-    />
-    <input
-    type="button"
-    value= night
-    onclick="
-    if (this.value == 'night') {
-      selectorBody.style.backgroundColor='black';
-      selectorBody.style.color='white';
-      this.value = day
-    } else {
-      selectorBody.style.backgroundColor='white';
-      selectorBody.style.color='black';
-      this.value = night
-    }
     "
     />
     <ol>
