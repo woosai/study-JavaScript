@@ -50,11 +50,7 @@ color: violet;
       var day = 'day'
       var selectorBody = document.querySelector('body')
 
-      function linkColorChange(self) {
-        
-        var tagA = document.querySelectorAll('a');
-        var index = 0;
-
+      function changeTheme(self) {
         if (self.value == night) {
           selectorBody.style.backgroundColor='black';
           selectorBody.style.color='white';
@@ -62,10 +58,7 @@ color: violet;
 
           tableBorderColorChange(true)
 
-          while(index<tagA.length) {
-            tagA[index].style.color = 'powderblue';
-            index = index + 1;
-          }
+          setLinkedColor('powderblue')
         } else {
           selectorBody.style.backgroundColor='white';
           selectorBody.style.color='black';
@@ -73,9 +66,7 @@ color: violet;
 
           tableBorderColorChange(false)
 
-          for (index = 0; index < tagA.length ; index++) {
-            tagA[index].style.color = 'blue'
-          }
+          setLinkedColor('blue')
         }          
       }
 
@@ -88,13 +79,24 @@ color: violet;
           document.documentElement.style.setProperty('--table-border-color', colors[0])
         }
       }
+
+      function setLinkedColor(color) {
+        var tagA = document.querySelectorAll('a');
+        var index = 0;
+
+        for (index = 0; index < tagA.length ; index++) {
+            tagA[index].style.color = color
+          }
+      }
+
     </script>
+    
     <h1><a href="index.html">JavaScript</a></h1>
     <input
       type="button"
       value="night"
       onclick="
-    linkColorChange(this)
+    changeTheme(this)
     document.querySelector('table', 'th', 'td').style.border='1px solid white';
     "
     />
