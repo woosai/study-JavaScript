@@ -74,10 +74,24 @@ color: violet;
       selectorBody.style.backgroundColor='black';
       selectorBody.style.color='white';
       this.value = day
+
+      var tagA = document.querySelectorAll('a');
+      var index = 0;
+      while(index<tagA.length) {
+        tagA[index].style.color = 'powderblue';
+        index = index + 1;
+      }
     } else {
       selectorBody.style.backgroundColor='white';
       selectorBody.style.color='black';
       this.value = night
+
+      var tagA = document.querySelectorAll('a');
+      var index = 0;
+      while(index<tagA.length) {
+        tagA[index].style.color = 'blue';
+        index = index + 1;
+      }
     }
     "
     />
