@@ -45,6 +45,23 @@ color: violet;
       var night = 'night'
       var day = 'day'
       var selectorBody = document.querySelector('body')
+
+      function linkColorChange(night_day) {
+        console.log(night_day);
+        var tagA = document.querySelectorAll('a');
+        var index = 0;
+
+        if (night_day == night) {
+          while(index<tagA.length) {
+            tagA[index].style.color = 'powderblue';
+            index = index + 1;
+          }
+        } else {
+          for (index = 0; index < tagA.length ; index++) {
+            tagA[index].style.color = 'blue'
+          }
+        }          
+      }
 </script>
     
     <h1><a href="index.html">JavaScript</a></h1>
@@ -75,22 +92,13 @@ color: violet;
       selectorBody.style.color='white';
       this.value = day
 
-      var tagA = document.querySelectorAll('a');
-      var index = 0;
-      while(index<tagA.length) {
-        tagA[index].style.color = 'powderblue';
-        index = index + 1;
-      }
+      linkColorChange(night)
     } else {
       selectorBody.style.backgroundColor='white';
       selectorBody.style.color='black';
       this.value = night
 
-      var tagA = document.querySelectorAll('a');
-      var index;
-      for (index = 0; index < tagA.length ; index++) {
-        tagA[index].style.color = 'blue';
-      }      
+      linkColorChange(day)
     }
     "
     />
