@@ -4,6 +4,7 @@
     <title>Woops study-JavaScript</title>
     <meta charset="utf-8" />
 
+    <script src="colors.js"></script>
     <style>
       :root {
         --table-border-color:black
@@ -45,59 +46,12 @@ color: violet;
     </style>
   </head>
   <body>
-    <script>
-      var night = 'night'
-      var day = 'day'
-      var selectorBody = document.querySelector('body')
-
-      function changeTheme(self) {
-        if (self.value == night) {
-          selectorBody.style.backgroundColor='black';
-          selectorBody.style.color='white';
-          self.value = 'day'
-
-          tableBorderColorChange(true)
-
-          setLinkedColor('powderblue')
-        } else {
-          selectorBody.style.backgroundColor='white';
-          selectorBody.style.color='black';
-          self.value = 'night'
-
-          tableBorderColorChange(false)
-
-          setLinkedColor('blue')
-        }          
-      }
-
-      function tableBorderColorChange(isNight) {
-        const colors = ['black', 'white']        
-
-        if (isNight) {
-          document.documentElement.style.setProperty('--table-border-color', colors[1])
-        } else {
-          document.documentElement.style.setProperty('--table-border-color', colors[0])
-        }
-      }
-
-      function setLinkedColor(color) {
-        var tagA = document.querySelectorAll('a');
-        var index = 0;
-
-        for (index = 0; index < tagA.length ; index++) {
-            tagA[index].style.color = color
-          }
-      }
-
-    </script>
-    
     <h1><a href="index.html">JavaScript</a></h1>
     <input
       type="button"
       value="night"
       onclick="
-    changeTheme(this)
-    document.querySelector('table', 'th', 'td').style.border='1px solid white';
+    changeTheme(this)    
     "
     />
     <ol>
