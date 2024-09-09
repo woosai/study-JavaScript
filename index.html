@@ -17,6 +17,27 @@
         padding: 10px; /* 셀 간의 여백 */
         text-align: left; /* 텍스트 정렬 (선택 사항) */
       }
+
+      .jsCss {
+        font-weight: bold;
+        color: brown;
+      }
+
+      #woosung {
+color: blue;
+      }
+
+      #ham {
+color: aqua;
+      }
+
+      #boram {
+color: blueviolet;
+      }
+
+      #bomi {
+color: violet;
+      }
     </style>
   </head>
   <body>
@@ -44,21 +65,28 @@
       <li><a href="3.html">JavaScript</a></li>
     </ol>
     <h2>HTML</h2>
+    <p>
+      우리 가족 구성원은 <span class="jsCss">아빠</span>,
+      <span class="jsCss">엄마</span>, <span class="jsCss">아들</span>, <span class="jsCss">딸</span>
+      입니다.<br />
+      <span class="jsCss">아빠</span>의 나이는 41살,  <span class="jsCss">엄마</span>의 나이는 43살, <span class="jsCss">아들</span>의 나이는 23살, <span class="jsCss">딸</span>의 나이
+      9살입니다.
+    </p>
     <table>
       <tr>
-        <td>아빠</td>
+        <td><span id="woosung" class="jsCss">아빠</span></td>
         <td>41</td>
       </tr>
       <tr>
-        <td>엄마</td>
+        <td><span id="ham" class="jsCss">엄마</span></td>
         <td>43</td>
       </tr>
       <tr>
-        <td>아들</td>
+        <td><span id="boram" class="jsCss">아들</span></td>
         <td>23</td>
       </tr>
       <tr>
-        <td>딸</td>
+        <td> <span id="bomi" class="jsCss">딸</span></t딸d>
         <td>8</td>
       </tr>
     </table>
