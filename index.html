@@ -41,6 +41,10 @@ color: violet;
     </style>
   </head>
   <body>
+    <script>
+      var night = 'night'
+      var day = 'day'
+    </script>
     <h1><a href="index.html">JavaScript</a></h1>
     <input
       type="button"
@@ -57,6 +61,22 @@ color: violet;
       onclick="
     document.querySelector('body').style.backgroundColor='white';
     document.querySelector('body').style.color='black';
+    "
+    />
+    <input
+    id="night_day"
+    type="button"
+    value= night
+    onclick="
+    if (document.querySelector('#night_day').value == 'night') {
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+      this.value = day
+    } else {
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black';
+      this.value = night
+    }
     "
     />
     <ol>
