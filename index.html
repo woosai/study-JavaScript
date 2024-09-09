@@ -44,14 +44,16 @@ color: violet;
     <script>
       var night = 'night'
       var day = 'day'
-    </script>
+      var selectorBody = document.querySelector('body')
+</script>
+    
     <h1><a href="index.html">JavaScript</a></h1>
     <input
       type="button"
       value="night"
       onclick="
-    document.querySelector('body').style.backgroundColor='black';
-    document.querySelector('body').style.color='white';
+    selectorBody.style.backgroundColor='black';
+    selectorBody.style.color='white';
     document.querySelector('table', 'th', 'td').style.border='1px solid white';
     "
     />
@@ -59,8 +61,8 @@ color: violet;
       type="button"
       value="day"
       onclick="
-    document.querySelector('body').style.backgroundColor='white';
-    document.querySelector('body').style.color='black';
+    selectorBody.style.backgroundColor='white';
+    selectorBody.style.color='black';
     "
     />
     <input
@@ -69,12 +71,27 @@ color: violet;
     value= night
     onclick="
     if (document.querySelector('#night_day').value == 'night') {
-      document.querySelector('body').style.backgroundColor='black';
-      document.querySelector('body').style.color='white';
+      selectorBody.style.backgroundColor='black';
+      selectorBody.style.color='white';
       this.value = day
     } else {
-      document.querySelector('body').style.backgroundColor='white';
-      document.querySelector('body').style.color='black';
+      selectorBody.style.backgroundColor='white';
+      selectorBody.style.color='black';
+      this.value = night
+    }
+    "
+    />
+    <input
+    type="button"
+    value= night
+    onclick="
+    if (this.value == 'night') {
+      selectorBody.style.backgroundColor='black';
+      selectorBody.style.color='white';
+      this.value = day
+    } else {
+      selectorBody.style.backgroundColor='white';
+      selectorBody.style.color='black';
       this.value = night
     }
     "
