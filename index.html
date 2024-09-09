@@ -87,11 +87,10 @@ color: violet;
       this.value = night
 
       var tagA = document.querySelectorAll('a');
-      var index = 0;
-      while(index<tagA.length) {
+      var index;
+      for (index = 0; index < tagA.length ; index++) {
         tagA[index].style.color = 'blue';
-        index = index + 1;
-      }
+      }      
     }
     "
     />
